@@ -1,0 +1,93 @@
+<!--
+  Copyright 2013,2014 IBM Corp.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!-- Input ADC -->
+<script type="text/x-red" data-template-name="i2c-adc-mcp3428">
+    <div class="form-row">
+        <label for="node-input-i2cdevice-mcp3428"><i class="fa fa-globe"></i> I2C Device</label>
+        <input type="text" id="node-input-i2cdevice">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-tips">Watch MCP3428 Board ADC via I2C.</div>
+</script>
+
+<script type="text/x-red" data-help-name="i2c-adc-mcp3428">
+    <p>Reads data from a local I2C MCP3428 ADC board on defined port (default 0x68)</p>
+    <p>Channels on the board are read individually, meaning channels 1-4 would each need a I2C-MCP3428 input setup</p>
+    <p>The frequency of sensor requests can be defined. This is set in Milliseconds and defaults to 100 or 10 times per second.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('i2c-adc-mcp3428',{
+        category: 'input',
+        defaults: {
+		    i2cdevice: {type:"i2c-device-mcp3428", required:true},
+            name: {name:"ADC Watcher"}
+        },
+        color:"#00e66c",
+        inputs:0,
+        outputs:1,
+        icon: "serial.png",
+        label: function() {
+			//return "label"
+            var I2CNode = RED.nodes.node(this.i2cdevice);
+            return this.name||('Watch ADC From '+(I2CNode?I2CNode.label().split("/")[2]:"i2c-?"));
+        },
+        labelStyle: function() {
+			return ""
+            //return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="i2c-device-mcp3428">
+    <div class="form-row">
+        <label for="node-config-input-device"><i class="fa fa-globe"></i> I2C Device</label>
+        <input type="text" id="node-config-input-device" placeholder="/dev/i2c-1" style="width: 45%;" >
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-address"><i class="fa fa-home"></i> Default Address</label>
+        <input type="text" id="node-config-input-address" placeholder="0x68">
+    </div>
+    <div class="form-row">
+		<label for="node-config-input-channel"><i class="fa fa-align-left"></i> Channel</label>
+		<input type="number" id="node-config-input-channel" placeholder="1">
+    </div>
+    <div class="form-row">
+		<label for="node-config-input-frequency"><i class="fa fa-bolt"></i> Frequency</label>
+		<input type="number" id="node-config-input-frequency" placeholder="100">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('i2c-device-mcp3428',{
+        category: 'config',
+        defaults: {
+            device: {value:"",required:true},
+            address: {value:"0x68",required:true},
+            channel: {value:"1",required:false},
+            frequency: {value: "100", required:false}
+        },
+        label: function() {
+            return this.device;
+        }
+    });
+
+</script>

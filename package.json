@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "node-red-i2c-mcp3428",
+        "scope": null,
+        "escapedName": "node-red-i2c-mcp3428",
+        "name": "node-red-i2c-mcp3428",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/pi/.node-red"
+    ]
+  ],
+  "_from": "node-red-i2c-mcp3428@latest",
+  "_id": "node-red-i2c-mcp3428@0.0.1",
+  "_inCache": true,
+  "_location": "/node-red-i2c-mcp3428",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/node-red-i2c-mcp3428-0.0.1.tgz_1498753490688_0.7996882721781731"
+  },
+  "_npmUser": {
+    "name": "rohoin",
+    "email": "rhoehn24@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "node-red-i2c-mcp3428",
+    "scope": null,
+    "escapedName": "node-red-i2c-mcp3428",
+    "name": "node-red-i2c-mcp3428",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-red-i2c-mcp3428/-/node-red-i2c-mcp3428-0.0.1.tgz",
+  "_shasum": "1295b32ebd16e4aabc146d483f9bb2de7385aad2",
+  "_shrinkwrap": null,
+  "_spec": "node-red-i2c-mcp3428",
+  "_where": "/home/pi/github",
+  "author": {
+    "name": "Rob Hoehn",
+    "email": "rhoehn24@gmail.com",
+    "url": "https://github.com/roarb/node-red-i2c-mcp3428"
+  },
+  "bugs": {
+    "url": "https://github.com/roarb/node-red-i2c-mcp3428/issues"
+  },
+  "dependencies": {
+    "i2c": "^0.2.3"
+  },
+  "description": "A Node-RED communications with Controll Everything's MCP3428 current boards",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "1295b32ebd16e4aabc146d483f9bb2de7385aad2",
+    "tarball": "https://registry.npmjs.org/node-red-i2c-mcp3428/-/node-red-i2c-mcp3428-0.0.1.tgz"
+  },
+  "gitHead": "",
+  "homepage": "https://github.com/roarb/node-red-i2c-mcp3428#readme",
+  "keywords": [
+    "node-red",
+    "node-red-mcp3428",
+    "i2c"
+  ],
+  "license": "Apache-2.0",
+  "main": "i2c/i2c-mcp3428.js",
+  "maintainers": [
+    {
+      "name": "Rob Hoehn",
+      "email": "rhoehn24@gmail.com"
+    }
+  ],
+  "name": "node-red-i2c-mcp3428",
+  "node-red": {
+    "nodes": {
+      "I2C MCP3428": "i2c/i2c-mcp3428.js"
+    }
+  },
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roarb/node-red-i2c-mcp3428.git"
+  },
+  "scripts": {},
+  "version": "0.0.1"
+}
