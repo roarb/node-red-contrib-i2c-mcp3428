@@ -1,4 +1,4 @@
-# node-red-i2c-mcp3428
+# node-red-contrib-i2c-mcp3428
 NodeRED - Node to read current from a Control Everything MCP3428 Analog to Digital Conversion 0-20v board connected via I2C.
 
 Board is available at : https://www.controleverything.com
